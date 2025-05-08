@@ -1,5 +1,5 @@
 # b5-assignment-1
-### How does TypeScript help in improving code quality and project maintainability?
+### Blog 1: How does TypeScript help in improving code quality and project maintainability?
 In the fast-paced world of software development, shipping reliable and maintainable code is paramount. TypeScript, a statically typed superset of JavaScript, provides robust tools to help teams build scalable and error-resistant applications. Here's how TypeScript contributes to code quality and project maintainability:
 
 #### 1. Type Safety Prevents Bugs Early
@@ -7,14 +7,12 @@ TypeScript allows you to define explicit types for variables, function arguments
 
 Example:
 
-typescript
-Copy
-Edit
 function greet(name: string) {
   return `Hello, ${name.toUpperCase()}`;
 }
 
-// greet(42); // ❌ Error: Argument of type 'number' is not assignable to parameter of type 'string'
+// greet(42); //  Error: Argument of type 'number' is not assignable to parameter of type 'string'
+
 #### 2. Improved Code Readability
 With clear type annotations, other developers can understand the purpose of variables and functions without diving deep into the implementation.
 
@@ -24,6 +22,15 @@ TypeScript powers intelligent code completions, navigation, and refactoring tool
 #### 4. Refactoring with Confidence
 When refactoring code, TypeScript helps detect all the places a variable, function, or type is used. This dramatically reduces the chance of introducing regressions.
 
-#### 5. Enforced Contracts with Interfaces and Types
-Interfaces and type aliases act as contracts within your code, making APIs self-documenting and easier to consume.
+
+### Blog 2 union and intersection types in TypeScript.
+
+#### Union Type
+A union type in TypeScript allows a variable to have one of several types. It is represented using the | operator.
+##### Example: type Animal = "Dog" | "Cat" | "Bird";
+In this example, a variable of type Animal can have the value "Dog", "Cat", or "Bird".
+#### Intersection Type
+An intersection type combines multiple types into a single type, representing the combination of all types. It is represented using the & operator.
+##### Example: type Person = { name: string } & { age: number };
+In this example, a variable of type Person must have both a name property of type string and an age property of type number.
 
