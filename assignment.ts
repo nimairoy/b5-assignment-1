@@ -42,3 +42,15 @@ const courses : Items[] = [
 
 const highRatedCourse = filterByRating(courses);
 console.log(highRatedCourse);
+
+
+// Problem 3
+function concatenateArrays<T>(...arrays: T[][]): T[]{
+    return  arrays.reduce((param1, param2) => param1.concat(param2), []);
+}
+
+const products = concatenateArrays(['Book', 'Pen', 'Watch'], ['Diary', 'Pencil', 'Eraser'], ['Brush', 'Pest']);
+console.log(products);
+
+const numbers = concatenateArrays([1, 2, 3], [4, 2, 5, 2]);
+console.log(numbers);
