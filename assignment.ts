@@ -53,6 +53,7 @@ console.log(highRatedCourse);
 
 // Problem 3
 // Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+
 function concatenateArrays<T>(...arrays: T[][]): T[]{
     return  arrays.reduce((param1, param2) => param1.concat(param2), []);
 }
@@ -147,3 +148,30 @@ const products = [
 ];
 
 console.log('Most Expensive Product is:', getMostExpensiveProduct(products));
+
+
+// problem 7 
+// Define an enum Day for the days of the week.
+// Create a function that returns "Weekday" or "Weekend" based on the input day.
+
+enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+  }
+  
+  function getDayType(day: Day): string {
+    switch(day){
+        case Day.Friday:
+            case Day.Saturday:
+                return 'Weekend';
+                default: return 'Weekday';
+    }
+  }
+
+  console.log(getDayType(Day.Friday));
+  console.log(getDayType(Day.Sunday));
