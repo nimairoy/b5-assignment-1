@@ -9,9 +9,9 @@ function formatString(input: string, toUpper: boolean = true ): string {
     return toUpper ? input.toUpperCase() : input.toLowerCase();
 }
 
-formatString('Next Level Web Development Course');
-formatString('Bangladesh', true);
-formatString('Bangladesh', false);
+console.log(formatString('Next Level Web Development Course'));
+console.log(formatString('Bangladesh', true));
+console.log(formatString('Bangladesh', false));
 
 
 // Problem 2
@@ -22,7 +22,7 @@ type Items = {
     rating: number;
 }
 
-function filterByRating(items: Items[]): Items[] {
+function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
 
    return items.filter(item => item.rating >= 4);
 }
@@ -58,10 +58,10 @@ function concatenateArrays<T>(...arrays: T[][]): T[]{
     return  arrays.reduce((param1, param2) => param1.concat(param2), []);
 }
 
-const products1 = concatenateArrays(['Book', 'Pen', 'Watch'], ['Diary', 'Pencil', 'Eraser'], ['Brush', 'Pest']);
+const products1 = concatenateArrays(['Book', 'Pen', 'Watch'], ['Brush', 'Pest']);
 console.log(products1);
 
-const numbers = concatenateArrays([1, 2, 3], [4, 2, 5, 2]);
+const numbers = concatenateArrays([1, 2, 3], [4,5,6]);
 console.log(numbers);
 
 
@@ -110,16 +110,16 @@ console.log('Car model is :', car1.getModel());
 // The length if it's a string
 // The number multiplied by 2 if it's a number
 
-function processInput(input: string | number): number {
-    if (typeof input === "string") {
-      return input.length;
+function processValue(value: string | number): number{
+    if (typeof value === "string") {
+      return value.length;
     } else {
-      return input * 2;
+      return value * 2;
     }
   }
   
-  console.log('String Length is: ', processInput('Next Level Web Developer'));
-  console.log('The Result is : ', processInput(50));
+  console.log('String Length is: ', processValue('Next Level Web Developer'));
+  console.log('The Result is : ', processValue(50));
 
 
 // Problem 6:
@@ -175,3 +175,25 @@ enum Day {
 
   console.log(getDayType(Day.Friday));
   console.log(getDayType(Day.Sunday));
+
+
+// problem 8 
+// Create an async function that 
+// Returns the square of a number after 1 second
+// Rejects if the number is negative
+
+const delay = (ms : number) : Promise<void> => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function squareAsync(n: number): Promise<number> {
+    if(n < 0){
+        throw new Error("Nagetive number is not allowed");
+    }
+    await delay(1000);
+    return n * n;
+}
+
+squareAsync(5)
+.then(result => console.log("Square Number is : ", result))
+.catch(err => console.error("ERROR :", err.message));
