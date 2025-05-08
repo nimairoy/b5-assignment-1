@@ -1,8 +1,3 @@
-// Problem 1
-// Create a function that takes a string and an optional boolean.
-// If the boolean is true or not provided, return the string in uppercase.
-// If the boolean is false, return the string in lowercase.
-
 
 
 function formatString(input: string, toUpper: boolean = true ): string {
@@ -14,8 +9,8 @@ console.log(formatString('Bangladesh', true));
 console.log(formatString('Bangladesh', false));
 
 
-// Problem 2
-// Create a function that filters an array of objects by the rating property, returning only items with a rating of 4 or more.
+
+
 
 type Items = {
     title: string;
@@ -51,8 +46,8 @@ console.log(highRatedCourse);
 
 
 
-// Problem 3
-// Create a generic function that concatenates multiple arrays of the same type using rest parameters.
+
+
 
 function concatenateArrays<T>(...arrays: T[][]): T[]{
     return  arrays.reduce((param1, param2) => param1.concat(param2), []);
@@ -66,9 +61,7 @@ console.log(numbers);
 
 
 
-// Problem 4 
-// Create a Vehicle class with private make and year properties and a getInfo() method.
-// Create a Car class extending Vehicle, adding a private model property and a getModel() method.
+
 
 
 class Vehicle {
@@ -105,10 +98,8 @@ console.log(car1.getInfo());
 console.log('Car model is :', car1.getModel());
 
 
-// Problem 5 
-// Write a function that takes a string | number and returns:
-// The length if it's a string
-// The number multiplied by 2 if it's a number
+
+
 
 function processValue(value: string | number): number{
     if (typeof value === "string") {
@@ -122,9 +113,8 @@ function processValue(value: string | number): number{
   console.log('The Result is : ', processValue(50));
 
 
-// Problem 6:
-//  Define an interface Product and create a function to find the product
-//  with the highest price in an array. If the array is empty, return null.
+
+
 
 interface Product {
     name: string;
@@ -150,9 +140,8 @@ const products = [
 console.log('Most Expensive Product is:', getMostExpensiveProduct(products));
 
 
-// problem 7 
-// Define an enum Day for the days of the week.
-// Create a function that returns "Weekday" or "Weekend" based on the input day.
+
+
 
 enum Day {
     Monday,
@@ -177,10 +166,8 @@ enum Day {
   console.log(getDayType(Day.Sunday));
 
 
-// problem 8 
-// Create an async function that 
-// Returns the square of a number after 1 second
-// Rejects if the number is negative
+
+
 
 const delay = (ms : number) : Promise<void> => {
     return new Promise(resolve => setTimeout(resolve, ms));
