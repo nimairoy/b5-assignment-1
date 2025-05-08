@@ -57,8 +57,8 @@ function concatenateArrays<T>(...arrays: T[][]): T[]{
     return  arrays.reduce((param1, param2) => param1.concat(param2), []);
 }
 
-const products = concatenateArrays(['Book', 'Pen', 'Watch'], ['Diary', 'Pencil', 'Eraser'], ['Brush', 'Pest']);
-console.log(products);
+const products1 = concatenateArrays(['Book', 'Pen', 'Watch'], ['Diary', 'Pencil', 'Eraser'], ['Brush', 'Pest']);
+console.log(products1);
 
 const numbers = concatenateArrays([1, 2, 3], [4, 2, 5, 2]);
 console.log(numbers);
@@ -119,3 +119,31 @@ function processInput(input: string | number): number {
   
   console.log('String Length is: ', processInput('Next Level Web Developer'));
   console.log('The Result is : ', processInput(50));
+
+
+// Problem 6:
+//  Define an interface Product and create a function to find the product
+//  with the highest price in an array. If the array is empty, return null.
+
+interface Product {
+    name: string;
+    price: number;
+  }
+  
+function getMostExpensiveProduct(products: Product[]): Product | null {
+
+    if(products.length === 0){
+        return null;
+    }else{
+        return products.reduce((maxProduct, currentProduct) => currentProduct.price > maxProduct.price ? currentProduct : maxProduct);
+    }
+    
+}
+
+const products = [
+  { name: "Pen", price: 80 },
+  { name: "Notebook", price: 115 },
+  { name: "Bag", price: 50 }
+];
+
+console.log('Most Expensive Product is:', getMostExpensiveProduct(products));
