@@ -23,7 +23,7 @@ TypeScript powers intelligent code completions, navigation, and refactoring tool
 When refactoring code, TypeScript helps detect all the places a variable, function, or type is used. This dramatically reduces the chance of introducing regressions.
 
 
-### Blog 2 union and intersection types in TypeScript.
+### Blog 2: union and intersection types in TypeScript.
 
 #### Union Type
 A union type in TypeScript allows a variable to have one of several types. It is represented using the | operator.
